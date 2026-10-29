@@ -1,0 +1,7 @@
+# Analysis Question Answers
+
+1. *Why the linked-list stack pushes at the head instead of the tail:*
+   In a singly linked list, operating at the head allows both push and pop actions to execute in $O(1)$ constant time because the head pointer directly references the node being changed. If pop operations were performed at the tail instead, the system would be forced to loop through the entire list from head to tail to locate the second-to-last node, decreasing performance to a slow $O(n)$ linear time complexity. Therefore, linked stacks must always modify elements at the head to preserve high structural efficiency.
+
+2. *Why the array queue must be circular:*
+   When a standard linear array queue undergoes a dequeue operation, the front index moves forward down the line. If it remains linear, the slots left behind become permanently unusable "dead slots," which leads to an inaccurate queue overflow error once the rear pointer reaches the end of the physical array size, even if many open slots remain at the front. Using a circular queue setup with modulo arithmetic wraps indices cleanly back to index 0, allowing completed front slots to be dynamically recycled and reused continuously.
